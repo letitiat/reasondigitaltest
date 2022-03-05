@@ -1,0 +1,15 @@
+{
+  "name": "reasondigital",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch ./wp-content/themes/mytheme/assets/scss -o ./wp-content/themes/mytheme/"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  }
+}

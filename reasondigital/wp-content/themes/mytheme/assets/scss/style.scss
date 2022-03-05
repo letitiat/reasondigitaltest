@@ -1,0 +1,255 @@
+/* Theme Name: Nick Cage Reason Digital
+Author: Letitia Tyrrell
+Description: Nick Cage Theme With Docker Set Up.
+Version: 0.1 */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+
+  img {  
+    width: 100%;
+  }
+
+  &--1-1 {
+    display: flex;
+  
+    gap: 30px;
+  }
+  
+  &--header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  
+    .brand {
+        img {
+            max-height: 40px;
+        }
+    }
+  }
+  
+  &--1-1 .block {
+    flex: 50%;
+  }
+  
+}
+
+.menu-btn {
+  position: relative;
+  z-index: 10;
+  width: 50px;
+  height: 26px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+
+  span {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 40px;
+    height: 4px;
+    background-color: #1D1E18;
+    border-radius: 2px;
+    transition: background-color 0.3s ease-in-out;
+
+    &.mid {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &.bot {
+      top: unset;
+      bottom: 0;
+    }
+  }
+
+  &:hover span {
+    background-color: #1D1E18;
+  }
+
+  &.active {
+    transform: rotate(180deg);
+
+    span {
+      background-color: white;
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+      &.top {
+        top: 9px;
+        left: 11.25px;
+        transform: rotate(45deg);
+        transform-origin: center;
+      }
+
+      &.mid {
+        left: 11.25px;
+        opacity: 0;
+      }
+    
+      &.bot {
+        top: 9px;
+        left: 11.25px;
+        transform: rotate(-45deg);
+        transform-origin: center;
+      }
+    }
+  }
+}
+
+#toggleMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 100vh;
+  color: white;
+  background-color: #1D1E18;
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transform: translate3d(300px, 0px, 0px);
+
+  
+&.open {
+  opacity: 1;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transform: translate3d(0px, 0px, 0px);
+}
+}
+
+.posts-feed {
+  display: flex;
+  flex-flow: wrap;
+  gap: 40px;
+  justify-content: center;
+
+  .post {
+    flex: 1 1 30%;
+  
+    &_image {
+      height: 420px;
+      overflow: hidden;
+    }
+  
+    a {
+      color: black;
+      text-decoration: none;
+    }
+  
+    h1 {
+      margin-bottom: 5px;
+    }
+  
+    p {
+      margin-top: 10px;
+    }
+  
+    &_image img {
+      width: 100%;
+      height: 100%;
+    
+      object-fit: cover;
+    }
+  }
+}
+
+.site-footer {
+  padding: 20px;
+  color: white;
+  text-align: center;
+  background-color: #1D1E18;
+}
+
+.category-filter {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+
+  li {
+    margin-right: 10px;
+    font-weight: 600;
+    color: #1D1E18;
+    cursor: pointer;
+    transition: 0.3s all;
+
+    &:hover {
+      color: #D8973C;
+    }
+
+    &.active {
+      color: #D8973C;
+    }
+  }
+
+  
+}
+
+.menu-item a {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    color: #D8973C;
+  }
+
+}
+
+figure {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.wp-block-embed img {
+  width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width: 800px) {
+  .container--1-1 {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .posts-feed .post {
+    flex: 1 1 100%;
+  }
+}

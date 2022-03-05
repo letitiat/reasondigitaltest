@@ -1,0 +1,180 @@
+/* Theme Name: Nick Cage Reason Digital
+Author: Letitia Tyrrell
+Description: Nick Cage Theme With Docker Set Up.
+Version: 0.1 */
+*,
+*:before,
+*:after {
+  box-sizing: border-box; }
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: "Roboto", sans-serif; }
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  justify-content: space-between;
+  flex-direction: column; }
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto; }
+  .container img {
+    width: 100%; }
+  .container--1-1 {
+    display: flex;
+    gap: 30px; }
+  .container--header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px; }
+    .container--header-top .brand img {
+      max-height: 40px; }
+  .container--1-1 .block {
+    flex: 50%; }
+
+.menu-btn {
+  position: relative;
+  z-index: 10;
+  width: 50px;
+  height: 26px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out; }
+  .menu-btn span {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 40px;
+    height: 4px;
+    background-color: #1D1E18;
+    border-radius: 2px;
+    transition: background-color 0.3s ease-in-out; }
+    .menu-btn span.mid {
+      top: 50%;
+      transform: translateY(-50%); }
+    .menu-btn span.bot {
+      top: unset;
+      bottom: 0; }
+  .menu-btn:hover span {
+    background-color: #1D1E18; }
+  .menu-btn.active {
+    transform: rotate(180deg); }
+    .menu-btn.active span {
+      background-color: white;
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; }
+      .menu-btn.active span.top {
+        top: 9px;
+        left: 11.25px;
+        transform: rotate(45deg);
+        transform-origin: center; }
+      .menu-btn.active span.mid {
+        left: 11.25px;
+        opacity: 0; }
+      .menu-btn.active span.bot {
+        top: 9px;
+        left: 11.25px;
+        transform: rotate(-45deg);
+        transform-origin: center; }
+
+#toggleMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 100vh;
+  color: white;
+  background-color: #1D1E18;
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transform: translate3d(300px, 0px, 0px); }
+  #toggleMenu.open {
+    opacity: 1;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translate3d(0px, 0px, 0px); }
+
+.posts-feed {
+  display: flex;
+  flex-flow: wrap;
+  gap: 40px;
+  justify-content: center; }
+  .posts-feed .post {
+    flex: 1 1 30%; }
+    .posts-feed .post_image {
+      height: 420px;
+      overflow: hidden; }
+    .posts-feed .post a {
+      color: black;
+      text-decoration: none; }
+    .posts-feed .post h1 {
+      margin-bottom: 5px; }
+    .posts-feed .post p {
+      margin-top: 10px; }
+    .posts-feed .post_image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+
+.site-footer {
+  padding: 20px;
+  color: white;
+  text-align: center;
+  background-color: #1D1E18; }
+
+.category-filter {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px; }
+  .category-filter li {
+    margin-right: 10px;
+    font-weight: 600;
+    color: #1D1E18;
+    cursor: pointer;
+    transition: 0.3s all; }
+    .category-filter li:hover {
+      color: #D8973C; }
+    .category-filter li.active {
+      color: #D8973C; }
+
+.menu-item a {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase; }
+  .menu-item a:hover {
+    color: #D8973C; }
+
+figure {
+  width: 100%;
+  height: auto;
+  margin: 0 auto; }
+
+.wp-block-embed img {
+  width: 100%;
+  height: auto; }
+
+@media only screen and (max-width: 800px) {
+  .container--1-1 {
+    flex-direction: column; } }
+
+@media only screen and (max-width: 650px) {
+  .posts-feed .post {
+    flex: 1 1 100%; } }
